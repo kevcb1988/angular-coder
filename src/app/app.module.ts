@@ -4,14 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
 import { ContenidoPrincipalComponent } from './components/contenido-principal/contenido-principal.component';
-import { PerfilComponent } from './components/perfil/perfil.component';
+import { MenuPrincipalComponent } from './components/menu-principal/menu-principal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuLateralComponent,
     ContenidoPrincipalComponent,
-    PerfilComponent
+    MenuPrincipalComponent
   ],
   imports: [
     BrowserModule

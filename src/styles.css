@@ -1,17 +1,75 @@
-.contenedor{
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    column-gap: 16px;
+/* font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+/* -- GENERALES -- */
+
+body{
+    font-family: 'Open Sans', sans-serif;
 }
 
-main{
-    display: grid;
-    grid-template-rows: 68px 1fr;
-    row-gap: 16px;
+a{
+    text-decoration: none;
 }
 
-h2{
-    padding: 0;
-    margin: 0;
+i{
+    font-size: 2em;
+    padding-top: 2px;
+    padding-bottom: 0;
+}
+
+/* -- MENU OFFCANVAS -- */
+
+.offcanvas{
+    width: 320px;
+    background-color: #000;
+    padding: 0 1.5em;
+}
+
+.offcanvas a{
+    display: flex;
+    padding: 24px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 1em;
+}
+
+.offcanvas .offcanvas-header{
+    margin: 1em 0;
+    padding: 0 0;
+}
+
+.offcanvas .offcanvas-header button{
+    padding: 0;
+    width: 3em;
+    color: aqua;
+}
+
+.offcanvas .offcanvas-body .menu a i{
+    font-size: 1.5em;
+    color: aqua;
+    margin-right: 12px !important;
+}
+
+/* -- CARD -- */
+
+.card .card-body .card-title{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.card .card-body .card-subtitle{
+    font-size: 0.8em;
+}
+
+.card .card-body .card-text{
+    font-size: 0.9em;
+    color: #666666;
+}
+
+.card .card-body .btn{
+    font-size: 0.85em;
+    letter-spacing: 0;
+    font-weight: 500;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
 }
