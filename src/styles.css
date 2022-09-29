@@ -20,17 +20,17 @@ i{
 /* -- MENU OFFCANVAS -- */
 
 .offcanvas{
-    width: 320px;
+    width: 280px !important;
     background-color: #000;
-    padding: 0 1.5em;
+    padding: 0em 1em;
 }
 
 .offcanvas a{
     display: flex;
-    padding: 24px;
+    padding: 1.5em 0em;
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 1em;
+    font-size: 0.9em;
 }
 
 .offcanvas .offcanvas-header{
