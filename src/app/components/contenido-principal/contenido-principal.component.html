@@ -4,17 +4,92 @@
 
     <div *ngFor="let estudiante of estudiantes" class="col-12 col-md-3 mb-4">
       <div class="card">
-        <img src="https://picsum.photos/500/300" class="card-img-top"/>
+        <img src="https://picsum.photos/500/300" class="card-img-top" />
         <div class="card-body">
           <h5 class="card-title">{{ estudiante.nombre }}</h5>
           <h6 class="card-subtitle text-muted">Carrerra: {{ estudiante.carrera }}</h6>
           <div class="card-subtitle text-muted mt-2">
-            Estado: <span [ngClass]="estudiante.estado === true ? 'badge text-bg-success' : 'badge text-bg-warning' ">{{ estudiante.mensaje }}</span>
+            Estado: <span [ngClass]="estudiante.estado === true ? 'badge text-bg-success' : 'badge text-bg-warning' ">{{
+              estudiante.mensaje }}</span>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-danger me-0 info" data-bs-toggle="modal" data-bs-target="#formulario-info">
+      <i class='bx bx-message-rounded-detail'></i>
+    </button>
+  </div>
+
+  <div class="modal fade" id="formulario-info" tabindex="-1" aria-labelledby="formulario-info" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content p-3">
+        <div class="modal-header pb-0 mb-0">
+          <div>
+            <h1 class="h1 modal-title fs-4" id="exampleModalLabel">Dejanos tus comentario.</h1>
+            <p class="small">Gracias, pronto nos comunicaremos contigo.</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body m-0">
+
+          <form (ngSubmit)="enviarComentario()" [formGroup]="formularioInfo" autocomplete="off">
+
+            <div class="form-floating mb-3">
+              <input [class.is-invalid]="nombreNoValido" formControlName="nombre" type="text" class="form-control"
+                id="nombre_completo" placeholder="Nombre Completo">
+              <label for="nombre_completo"><small>Nombre Completo</small></label>
+              <div *ngIf="nombreNoValido" class="text-danger">
+                <small>Debe tener mínimo 6 caracteres.</small>
+              </div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input [class.is-invalid]="correoNoValido" formControlName="correo" type="email" class="form-control" id="email"
+                placeholder="Correo Electrónico">
+              <label for="email"><small>Correo Electrónico</small></label>
+              <div *ngIf="correoNoValido" class="text-danger">
+                <small>Correo Electrónico no válido.</small>
+              </div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <textarea [class.is-invalid]="comentarioNoValido" formControlName="comentario" class="form-control" placeholder="Escribe tu comentario..."
+                id="comentario" style="height: 100px"></textarea>
+              <label for="comentario" class="small">Escribe tu comentario...</label>
+              <div *ngIf="comentarioNoValido" class="text-danger">
+                <small>Tu comentario debe contener más de 10 caracteres.</small>
+              </div>
+            </div>
+
+            <div class="form-floating mb-0">
+              <select [class.is-invalid]="programaNoValido" formControlName="programa" class="form-select" id="programa"
+                aria-label="Floating label select example">
+                <option selected>Selecciona el curso o carrera</option>
+                <option value="Desarollo Software">Desarrollo de Software</option>
+                <option value="Diseño Gráfico">Diseño Gráfico</option>
+                <option value="Investigación">Investigación</option>
+                <option value="Pedagogía">Pedagogía</option>
+              </select>
+              <label for="programa">Carrera o Programa</label>
+              <div *ngIf="programaNoValido" class="text-danger">
+                <small>Debes seleccionar una opción.</small>
+              </div>
+            </div>
+
+            <div class="d-flex gx-0 modal-footer border border-0 mx-auto">
+              <button [disabled]="formularioInfo.invalid" type="submit"
+                class="btn btn-primary mx-auto px-5">Enviar</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
   </div>
 
 </div>
